@@ -1,4 +1,5 @@
-<train>
+<?xml version="1.0" encoding="UTF-8" ?>
+<train xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="train.xsd">
     <id>46ed6171-1eba-4411-bcb4-d7cb7ca4aefe</id>
     <name>Москва - Северобайкальск</name>
     <locomotive-type>Электровоз</locomotive-type>

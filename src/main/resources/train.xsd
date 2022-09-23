@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
-    <xs:element name="wagon">
-        <xs:complexType>
-            <xs:sequence>
-                    <xs:element name="id" />
-                    <xs:element name="city" type="xs:string"/>
-                    <xs:element name="country" type="xs:string"/>
-                    <xs:element name="type" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+   <xs:element name="train" type="Train"/>
 
-    <xs:element name="train">
-    <xs:complexType>
+    <xs:complexType name="Wagon">
         <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="num" type="xs:int"/>
+            <xs:element name="seats" type="xs:int"/>
+            <xs:element name="type" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Train">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="locomotive-type"/>
-            <xs:element name="form-date" type="xs:date"/>
+            <xs:element name="form-date" type="xs:dateTime"/>
             <xs:element name="wagons">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element ref="wagon" maxOccurs="unbounded"/>
+                        <xs:element type="Wagon" name="wagon"  maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    </xs:element>
+
 </xs:schema>

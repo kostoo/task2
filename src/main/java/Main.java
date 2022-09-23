@@ -1,5 +1,5 @@
 
-import Entity.Train;
+import entity.Train;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.xml.bind.JAXBContext;
@@ -15,13 +15,13 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            InputStream inputStream = new FileInputStream("F:\\folder1\\train.xml");
+            InputStream inputStream = new FileInputStream("src\\main\\resources\\train.xml");
 
             Train train = readXmlTrainEntity(inputStream);
 
             System.out.println("Преобразованный объект: " + train.toString());
 
-            convertTrainEntityToJson("F:\\folder1\\train.json", train);
+            convertTrainEntityToJson("src\\main\\resources\\train.json", train);
 
         } catch (FileNotFoundException | JAXBException e) {
             e.printStackTrace();
